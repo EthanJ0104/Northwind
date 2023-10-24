@@ -1,0 +1,10 @@
+@model IEnumerable<Category>
+
+<div>
+    <ul class="list-group">
+        @foreach (Category category in Model)
+        {
+            <li class="list-group-item"><a asp-action="CategoryDetail" asp-route-id="@category.CategoryId"><button type="button" class="btn btn-primary">@category.CategoryName</button></a></li>
+        }
+    </ul>
+</div>

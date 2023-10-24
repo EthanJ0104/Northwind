@@ -1,0 +1,23 @@
+@model ProductViewModel
+
+<div class="bg-primary m-1 p-1 text-white"><h4>@Model.category.CategoryName Details</h4></div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Product Name</th>
+      <th scope="col">Unit Price</th>
+      <th scope="col">Units in Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (Product product in Model.Products)
+    {
+        <tr>
+            <th scope="row">@product.ProductName</th>
+            <td>@product.UnitPrice</td>
+            <td>@product.UnitsInStock</td>
+        </tr>
+    }
+  </tbody>
+</table>

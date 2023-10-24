@@ -1,0 +1,30 @@
+@model IEnumerable<Customer>
+
+<div class="bg-primary m-1 p-1 text-white"><h4>Customers</h4> <a asp-action="AddCustomer" asp-route-itemid=""><button type="button" class="btn btn-light">Add Customer</button></a></div>
+
+@if (Model.Count() == 0)
+{
+    <p>There are no customers</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th scope="col">Company Name</th>
+            <th scope="col">City</th>
+            <th scope="col">Postal Code</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Customer customer in Model)
+            {
+                <tr>
+                    <th scope="row">@customer.CompanyName</th>
+                    <td>@customer.City</td>
+                    <td>@customer.PostalCode</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,8 @@
+@model IEnumerable<Discount>
+
+<ul class="list-group">
+  @foreach (Discount d in Model)
+    {
+        <li class="list-group-item"><b>@d.Title</b>: @d.Description | Discount expires: @d.EndTime.ToString("MM/dd/yyyy")</li>
+    }
+</ul>
